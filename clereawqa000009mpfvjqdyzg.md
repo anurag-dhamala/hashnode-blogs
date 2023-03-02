@@ -4,7 +4,7 @@ seoTitle: "Object.seal() vs Object.freeze(). How to restrict JavaScript Objects?
 seoDescription: "Object.seal() vs Object.freeze(). How to restrict JavaScript Objects? This article covers how you can modify and restrict the JavaScript objects."
 datePublished: Thu Mar 02 2023 17:43:29 GMT+0000 (Coordinated Universal Time)
 cuid: clereawqa000009mpfvjqdyzg
-slug: objectfreeze-vs-objectseal-vs-objectdefineproperty
+slug: restrict-js-objects
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/eMP4sYPJ9x0/upload/863e1a1dc27090249815cc352eb4020c.jpeg
 tags: javascript, javascript-framework, javascript-library, javascript-modules, programming-tips
 
@@ -28,7 +28,7 @@ The above program will result in:
 { name: "Anurag", hobby: "Programmer" }
 ```
 
-### Scenario 1:
+### Scenario 1
 
 **You have a Javascript Object. You want to restrict the addition of new properties to it. You also want to restrict the modification of already existing property.**
 
@@ -52,10 +52,10 @@ The above program will result in:
 { name: "Anurag" }
 ```
 
-### Scenario 2:
+### Scenario 2
 
-**You have a Javascript object. You want to allow the modification of already existing property, but want to restrict the addition of new property.**  
-  
+**You have a Javascript object. You want to allow the modification of already existing property, but want to restrict the addition of new property.**
+
 Well, here comes the **Object.seal()** method. It is used when you want to allow users to modify the pre-existing properties of an object, but restrict them from adding a new property.
 
 ```javascript
@@ -76,7 +76,7 @@ The above program will result in:
 
 See, how Object.seal() played its role? It allowed the "name" to be modified but did not allow for "hobby" to be added to the "bio".
 
-### Scenario 3:
+### Scenario 3
 
 **You have a JavaScript object with more than one property. You want to allow the modification of one property while restricting the other one.**
 
@@ -117,10 +117,10 @@ The output of the above program is:
 { salary: '$200K', title: 'Software Engineer' }
 ```
 
-Let's see what we did here. We wanted to allow the modification of "salary", but not of the "title". So, the property that we want to restrict is first moved out of the object and is manually created using Object.defineProperty().  
-  
-Then we say, Hey! in the "job" object, add the property with the name "title". By the way, I want its value to be equal to "Software Engineer", and I want it to be non-writable (writable: false).  
-  
+Let's see what we did here. We wanted to allow the modification of "salary", but not of the "title". So, the property that we want to restrict is first moved out of the object and is manually created using Object.defineProperty().
+
+Then we say, Hey! in the "job" object, add the property with the name "title". By the way, I want its value to be equal to "Software Engineer", and I want it to be non-writable (writable: false).
+
 Notice that **enumerable: true**? It is added because of node.js. NodeJs chooses not to display the property whose **enumerable** property descriptor is false. In web browsers, it is not needed.
 
 We then modified the salary successfully to $200k, but couldn't modify the title to "DevOps Engineer".
