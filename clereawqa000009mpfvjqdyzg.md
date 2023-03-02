@@ -1,7 +1,7 @@
 ---
 title: "Object.freeze() vs Object.seal() vs Object.defineProperty()"
 seoTitle: "Object.seal() vs Object.freeze(). How to restrict JavaScript Objects?"
-seoDescription: "Object.seal() vs Object.freeze(). How to restrict JavaScript Objects? This article covers how you can modify and restrict the JavaScript objects."
+seoDescription: "This article covers how you can modify and restrict the JavaScript objects."
 datePublished: Thu Mar 02 2023 17:43:29 GMT+0000 (Coordinated Universal Time)
 cuid: clereawqa000009mpfvjqdyzg
 slug: restrict-js-objects
