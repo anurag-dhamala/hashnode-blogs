@@ -51,7 +51,7 @@ And where is this getter defined? It is in the \[\[Get\]\] internal method. **ob
 
 ### Traps
 
-They are what their names suggests. They are the traps that intercept the actual object's internal method calls. They define the behavior of the corresponding internal methods. For example, the **get() trap** defines the behavior of **\[\[Get\]\]**. **set() trap** defines the behavior of **\[\[Set\]\]** internal method and so on. Handler object in Proxy consists of these traps that redefine the actual internal methods. Let's take a closer look at get() method for example:
+They are what their names suggest. They are the traps that intercept the actual object's internal method calls. They define the behavior of the corresponding internal methods. For example, the **get() trap** defines the behavior of **\[\[Get\]\]**. **set() trap** defines the behavior of **\[\[Set\]\]** internal method and so on. Handler object in Proxy consists of these traps that redefine the actual internal methods. Let's take a closer look at the get() method for example:
 
 ```javascript
 const handler = {
