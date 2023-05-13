@@ -36,7 +36,7 @@ console.log(proxy.name); // output: "hello"
 console.log(object1.name); // output: "John Doe"
 ```
 
-As seen in the code above, Proxy object is created with the target object and its handler object. When we call **proxy.name**, the **get()** method defined inside the handler object is triggered and it returns "hello". The get() method is corresponding to the ***object internal method* ( i.e. \[\[GET\]\])**. These methods inside handler object are often termed ***traps****.* Let's quickly learn what they are as they are an important part of the working mechanism of Proxy objects.
+As seen in the code above, Proxy object is created with the target object and its handler object. When we call **proxy.name**, the **get()** method defined inside the handler object is triggered and it returns "hello". The get() method is corresponding to the ***object internal method* ( i.e. \[\[GET\]\])**. These methods inside handler object are often termed ***traps***\*.\* Let's quickly learn what they are as they are an important part of the working mechanism of Proxy objects.
 
 ### Object Internal Methods
 
@@ -51,7 +51,7 @@ And where is this getter defined? It is in the \[\[Get\]\] internal method. **ob
 
 ### Traps
 
-They are what their name suggests. They are the traps that intercept the actual object's internal method calls. They define the behavior of the corresponding internal methods. For example, the **get() trap** defines the behavior of **\[\[Get\]\]**. **set() trap** defines the behavior of **\[\[Set\]\]** internal method and so on. Handler object in Proxy consists of these traps that redefine the actual internal methods. Let's take a closer look at get() method for example:
+They are what their names suggests. They are the traps that intercept the actual object's internal method calls. They define the behavior of the corresponding internal methods. For example, the **get() trap** defines the behavior of **\[\[Get\]\]**. **set() trap** defines the behavior of **\[\[Set\]\]** internal method and so on. Handler object in Proxy consists of these traps that redefine the actual internal methods. Let's take a closer look at get() method for example:
 
 ```javascript
 const handler = {
@@ -84,7 +84,6 @@ You can find the list of object internal methods and their corresponding traps i
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1683472826971/db30c0b9-ee39-4ab8-acb9-7da04b950e86.png align="center")
 
-  
 Another thing you should know is that **Proxy** provides a static method: **revocable().** As the method name suggests, it returns the **proxy object** along with **revoke()** method wrapped in the single object.
 
 ```javascript
@@ -109,7 +108,6 @@ const proxyObject = proxyWrapper.proxy;
 
 // when you want to revoke the proxy
 proxyWrapper.revoke();
-    
 ```
 
 Once the proxy is revoked, it becomes unusable. Any call to the internal methods through proxy object will throw TypeError.
