@@ -14,7 +14,7 @@ What is SSH forwarding with Docker? Why do we need it in the first place? What p
 
 ### Scenario
 
-Imagine a scenario: you are building a library that is to be used within an organization. With your skill, you built it within a matter of days and now it's time to share your library with your fellow engineers. Since you cannot expose the library to the public, you plan to publish the library in a private repository that uses an SSH connection. Your teammates are happily using it as they too have access to that private repo. But, when it's time to build the docker image of the project that's using your library, the build process keeps failing. You are scratching your head on how to provide the docker image access to that private repo without exposing your private keys.
+Imagine a scenario: you are building a library that is to be used within an organization. As passionate as you are, you built it within a matter of days and now it's time to share your library with your fellow engineers. Since you cannot expose the library to the public, you plan to publish the library in a private repository that uses an SSH connection. Your teammates are happily using it as they too have access to that private repo. But, when it's time to build the docker image of the project that's using your library, the build process keeps failing. You are scratching your head on how to provide the docker image access to that private repo without exposing your private keys.
 
 ### Possible options
 
@@ -101,7 +101,7 @@ By any chance, if you have your SSH key in some other location, I mentioned that
 docker build --ssh github=path/to/id_rsa -t image:tag .
 ```
 
-Here, in **\--ssh github=path/to/id\_rsa**, github is just the id*(can be anything)* that we have to mention in the run command as shown below:
+Here, in **\--ssh github=path/to/id\_rsa**, github is just the id\*(can be anything)\* that we have to mention in the run command as shown below:
 
 ```dockerfile
 RUN --mount=type=ssh,id=github npm install
