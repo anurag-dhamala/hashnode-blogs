@@ -1,6 +1,6 @@
 ---
 title: "SSH forwarding with Docker"
-seoTitle: "Docker SSH forwarding using BuildKit"
+seoTitle: "SSH forwarding with Docker"
 seoDescription: "How you can easily get access to private repository using Docker BuildKit? Read to find out how you can perform SSH forwarding with Docker."
 datePublished: Sun Aug 27 2023 12:20:51 GMT+0000 (Coordinated Universal Time)
 cuid: clltf5myr000a0al3baj5hdpt
